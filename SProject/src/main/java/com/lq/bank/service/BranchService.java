@@ -20,38 +20,18 @@ public class BranchService {
 	@Autowired
 	private AccountService accountService;
 	
-	
 	@Autowired
 	private BranchRepository branchRepository;
 	
+	
+	
 	public void newBranch(String name) {
 		
-		
-		Branch newBranch = new Branch(name,1000);
+		Branch newBranch = new Branch(name);
 		branchRepository.save(newBranch);
 	}
 	
 	
-//	
-//	public ArrayList<Map<String,Object>> listAllAccounts()
-//	{
-//		
-//		ArrayList<Map<String,Object>> ml = new ArrayList<Map<String,Object>>();
-//		
-//		
-//		Branch branchA = new Branch("branch a",1);
-//		Customer c_1 = new Customer("Rodney", "Mckay", 10,branchA );
-//		Account ac_1 = new Account(1, AccountType.CHECKING, 10,"checking",branchA,c_1);
-//		Account ac_2 = new Account(1, AccountType.CHECKING, 10,"second checking",branchA,c_1);
-//
-//		
-//		
-//		ml.add(accountService.buildAccountInfo(ac_1));
-//		ml.add(accountService.buildAccountInfo(ac_2));
-//		
-//		
-//		return ml;
-//	}
 	
 	public List<Map<String, Object>> getAllBranches()
 	{
